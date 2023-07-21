@@ -1,0 +1,6 @@
+@import url("./main.css");
+
+.signin {
+  background-color: var(--bg);
+  height: calc(100vh - 50px);
+}

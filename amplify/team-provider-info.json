@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-movihive-dev-114011-authRole",
+      "UnauthRoleArn": "arn:aws:iam::478716042450:role/amplify-movihive-dev-114011-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::478716042450:role/amplify-movihive-dev-114011-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-movihive-dev-114011-deployment",
+      "UnauthRoleName": "amplify-movihive-dev-114011-unauthRole",
+      "StackName": "amplify-movihive-dev-114011",
+      "StackId": "arn:aws:cloudformation:us-east-1:478716042450:stack/amplify-movihive-dev-114011/120c7f10-15ca-11ee-b550-0e1b661367b9",
+      "AmplifyAppId": "d3cjhrcznd51zj"
+    },
+    "categories": {
+      "auth": {
+        "movihive59bf04d1": {}
+      }
+    }
+  }
+}

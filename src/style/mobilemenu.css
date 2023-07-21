@@ -1,0 +1,57 @@
+@import url("./main.css");
+
+.mobile-menu {
+  background-color: var(--bg-3);
+  position: absolute;
+  top: 46px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 95%;
+  padding-top: 80px;
+  z-index: 3;
+}
+
+.mobile-menu .coded-by {
+  font-size: smaller;
+  color: rgb(115, 115, 115);
+}
+
+.mobile-menu .movihive {
+  line-height: 1rem;
+  color: var(--gold);
+}
+
+.mobile-menu .mobile-menu-footer {
+  margin-top: 80px;
+  line-height: 1.5rem;
+  color: var(--gold);
+}
+
+.mobile-menu .login-link {
+  text-decoration: none;
+}
+
+.mobile-menu .login-link:link {
+  color: var(--text-color-2);
+}
+
+.mobile-menu .login-link:visited {
+  color: var(--text-color-2);
+}
+
+.mobile-menu .login-link:visited:hover {
+  color: var(--gold);
+}
+
+.mobile-menu .login-link:link.active {
+  color: var(--gold);
+}
+
+.mobile-menu .login-link:visited.active {
+  color: var(--gold);
+}
+
+.mobile-menu .login-link:active {
+  color: var(--gold);
+}

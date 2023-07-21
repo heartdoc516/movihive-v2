@@ -1,0 +1,47 @@
+@import url("./main.css");
+
+.confirm-signup-form {
+  padding: 30px;
+  width: 400px;
+
+  overflow: hidden;
+  background-color: black;
+  border-radius: 10px;
+}
+
+.confirm-signup-form h3 {
+  color: rgb(202, 202, 202);
+}
+
+.confirm-signup-form input[type="submit"] {
+  width: 100px;
+  margin: 20px auto;
+  background-color: black;
+  border: none;
+  color: var(--gold);
+  cursor: pointer;
+
+  -webkit-transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -ms-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+}
+
+.confirm-signup-form input[type="submit"]:hover {
+  opacity: 0.8;
+}
+
+.confirm-signup-form input[type="submit"]:active {
+  opacity: 0.4;
+}
+
+.confirm-signup-form .character {
+  width: 40px;
+  background-color: rgb(58, 58, 58);
+  color: rgb(195, 195, 195);
+}
+
+.confirm-signup-form .character--selected {
+  outline-color: var(--gold);
+}

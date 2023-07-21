@@ -1,0 +1,17 @@
+@import url("./main.css");
+
+.content-carousel .carousel-item {
+  background-color: aqua;
+}
+
+.content-carousel .swiper-button-prev::after {
+  color: white;
+  font-size: 2rem;
+}
+.content-carousel .swiper-button-next::after {
+  color: white;
+  font-size: 2rem;
+}
+.content-carousel .swiper-pagination-bullet {
+  background-color: var(--gold);
+}

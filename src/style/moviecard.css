@@ -1,0 +1,10 @@
+@import url("./main.css");
+
+.movie-card .text-block {
+  height: 50px;
+}
+
+.movie-card .provider-logo {
+  width: 2rem;
+  border-radius: 10px;
+}

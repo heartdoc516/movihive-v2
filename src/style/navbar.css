@@ -1,0 +1,105 @@
+@import url("./main.css");
+
+.nav_link.active {
+  color: var(--gold);
+}
+
+.navbar {
+  max-height: 50px;
+  background-color: black;
+}
+
+.navbar-logo {
+  height: 30px;
+  line-height: 0;
+}
+
+.nav-links-end {
+  width: 160px;
+}
+
+.logo-container {
+  width: 160px;
+}
+
+.nav_link {
+  padding: 0 30px;
+  text-decoration: none;
+}
+
+.nav_link:link {
+  color: var(--text-color-2);
+}
+
+.nav_link:visited {
+  color: var(--text-color-2);
+}
+
+.nav_link:link:hover {
+  color: var(--gold);
+}
+
+.nav_link:visited:hover {
+  color: var(--gold);
+}
+
+.nav_link:link.active {
+  color: var(--gold);
+}
+
+.nav_link:visited.active {
+  color: var(--gold);
+}
+
+.nav_link:active {
+  color: var(--gold);
+}
+
+.login-link {
+  text-decoration: none;
+}
+
+.login-link:link {
+  color: var(--text-color-2);
+}
+
+.login-link:visited {
+  color: var(--text-color-2);
+}
+
+.nav_link:link:hover {
+  color: var(--gold);
+}
+
+.login-link:visited:hover {
+  color: var(--gold);
+}
+
+.login-link:link.active {
+  color: var(--gold);
+}
+
+.login-link:visited.active {
+  color: var(--gold);
+}
+
+.login-link:active {
+  color: var(--gold);
+}
+
+.watchlist {
+  text-decoration: none;
+}
+
+.watchlist:link {
+  color: rgb(206, 206, 206);
+}
+
+.watchlist:visited {
+  color: rgb(206, 206, 206);
+}
+
+.navbar .user-button {
+  background-color: var(--bg);
+  border: none;
+}

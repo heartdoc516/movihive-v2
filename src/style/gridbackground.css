@@ -1,0 +1,13 @@
+@import url("./main.css");
+
+.grid-background {
+  width: 100vw;
+  height: calc(100vh - 50px);
+  background-color: aqua;
+}
+
+.grid-background .bg-item {
+  width: calc(100vw / 12);
+  margin: 0;
+  padding: 0;
+}

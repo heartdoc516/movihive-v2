@@ -1,0 +1,6 @@
+@import url("./main.css");
+
+.genre-tags .genre {
+  font-size: 0.7em;
+  color: rgb(204, 204, 204);
+}
