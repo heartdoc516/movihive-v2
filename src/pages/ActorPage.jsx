@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useParams, Link } from "react-router-dom";
+import "../style/actorpage.css";
 
 const ActorPage = () => {
   const { actorId } = useParams();
@@ -61,24 +62,23 @@ const ActorPage = () => {
   };
 
   return (
-    <div>
+    <div className="actor-page">
       <h2 className="overviewtext now-playing title text-white">{name}</h2>
-      <p className="overviewtext now-playing title text-white">
-        Date de naissance : {birthday}
-      </p>
-      <p className="overviewtext now-playing title text-white">
+      <p className="overviewtext text-white">Date de naissance : {birthday}</p>
+      <p className="overviewtext text-white">
         Pays d'origine : {place_of_birth}
       </p>
-
-      <div className="overviewleft">
+      <div className="d-flex justify-content-center">
         <img
           src={`https://image.tmdb.org/t/p/w300/${profile_path}`}
           alt={name}
+          className=""
         />
       </div>
+
       <div className="actor-page-container">
         <div className="movies">
-          <h2 className="overviewtext now-playing title text-white">
+          <h2 className="overviewtext text-white">
             Les films populaires de {name}
           </h2>
           <Slider {...settings}>
@@ -91,9 +91,7 @@ const ActorPage = () => {
                       src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
                       alt={movie.title}
                     />
-                    <p className="now-playing title text-white">
-                      {movie.title}
-                    </p>
+                    <p className="text-white">{movie.title}</p>
                   </div>
                 </Link>
               </div>
@@ -101,10 +99,8 @@ const ActorPage = () => {
           </Slider>
         </div>
         <div className="biography-container">
-          <h2 className="overviewtext now-playing title text-white">
-            Biographie
-          </h2>
-          <p className="overview now-playing title text-white">
+          <h2 className="overviewtext text-white">Biographie</h2>
+          <p className="text-white w-75 mx-auto">
             {showFullBiography ? biography : truncatedBiography}
             {!showFullBiography && (
               <button className="see-more-button" onClick={handleSeeMoreClick}>

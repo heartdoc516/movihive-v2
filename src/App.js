@@ -12,7 +12,7 @@ import Tv from "./pages/Tv.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Search from "./pages/Search.jsx";
 import AuthPage from "./pages/AuthPage.jsx";
-
+import Footer from "./components/Footer.jsx";
 
 import { LoadingContextProvider } from "./context/AppContext.jsx";
 
@@ -32,14 +32,18 @@ function App() {
           <Route path="/movie/:movieId" element={<Movie />} />
           <Route path="/ActorPage/:actorId" element={<ActorPage />} />
           <Route path="/serie/:serieId" element={<Serie />} />
-          <Route path="/watchlist" element={user ? <Watchlist /> : <Movies />} />
+          <Route
+            path="/watchlist"
+            element={user ? <Watchlist /> : <Movies />}
+          />
           <Route path="/search" element={<Search />} />
           <Route
             path="/auth"
             element={<AuthPage user={user} setUser={setUser} />}
           />
-         <Route path="/category/:idCategory" element={<CategoryPage />} />
+          <Route path="/category/:idCategory" element={<CategoryPage />} />
         </Routes>
+        <Footer />
       </div>
     </LoadingContextProvider>
   );

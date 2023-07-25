@@ -26,21 +26,26 @@ const SearchPage = () => {
 
   return (
     <section className="search-page">
-      <form className="d-flex mt-5 mx-auto px-4 py-2" role="search">
-        <input
-          className="bg-transparent text-white border-0 flex-fill"
-          type=""
-          placeholder="Search Movies, Series, Actors..."
-          aria-label="Search"
-          onChange={(e) => {
-            setSearchQuery(e.target.value);
-          }}
-        />
-      </form>
+      <div className="container-sm">
+        <form className="d-flex mt-5 mx-auto w-auto px-4 py-2" role="search">
+          <input
+            className="bg-transparent text-white border-0 flex-fill"
+            type=""
+            placeholder="Search Movies, Series, Actors..."
+            aria-label="Search"
+            onChange={(e) => {
+              setSearchQuery(e.target.value);
+            }}
+          />
+        </form>
+      </div>
       <div className="mx-auto w-50 d-flex gap-3 justify-content-center flex-wrap mt-5">
-        {data.map((item) => (
-          <div className="text-white-50">{item.title}</div>
-        ))}
+        {!searchQuery &&
+          data.map((item) => (
+            <div className="text-white-50" key={item.id}>
+              {item.title}
+            </div>
+          ))}
       </div>
 
       <main className="search-results">

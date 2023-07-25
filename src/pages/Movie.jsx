@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
 import Slider from "react-slick";
-
+import "../style/moviepage.css";
 import ReactPlayer from "react-player";
 import ActorPage from "./ActorPage";
 import Favorite from "../components/Favorite";
@@ -137,7 +137,7 @@ const MoviePage = () => {
   };
 
   return (
-    <div>
+    <div className="movie-page">
       <div className="carousel" style={carouselStyle}>
         <Slider {...carouselSettings}>
           {backdrops.map((backdrop) => (
@@ -152,20 +152,16 @@ const MoviePage = () => {
           ))}
         </Slider>
       </div>
-      ,<h2 className="overviewtext now-playing title text-white">{title}</h2>
-      <p className="overviewtext now-playing title text-white">
-        Date de sortie : {release_date}
-      </p>
-      <p className="overviewtext now-playing title text-white">
-        Note : {vote_average}
-      </p>
+      ,<h2 className="overviewtext title text-white">{title}</h2>
+      <p className="overviewtext text-white">Date de sortie : {release_date}</p>
+      <p className="overviewtext text-white">Note : {vote_average}</p>
       <div className="synopsis-video-container">
         <div className="overviewtext rounded bg-gray-transparent">
-          <h2 className="now-playing title text-white">Bande-annonce</h2>
+          <h2 className="text-white">Bande-annonce</h2>
         </div>
 
         <div className="overviewtext rounded bg-gray-transparent">
-          <h2 className="now-playing title text-white">Synopsis</h2>
+          <h2 className="text-white">Synopsis</h2>
         </div>
       </div>
       <div className="synopsis-video-container">
@@ -183,22 +179,23 @@ const MoviePage = () => {
         </div>
 
         <div className="overview rounded bg-gray-transparent">
-          <p className="now-playing title text-white">{overview}</p>
+          <p className="text-white">{overview}</p>
         </div>
       </div>
       <div className="cast">
-        <h2 className="overviewtext now-playing title text-white">
-          Acteurs Principaux
-        </h2>
+        <h2 className="overviewtext text-white">Main Actors</h2>
         <div className="actor-container">
           {cast.map((actor) => (
             <div key={actor.id} className="actor-image">
-              <Link to={`/ActorPage/${actor.id}`}>
+              <Link
+                to={`/ActorPage/${actor.id}`}
+                className="text-decoration-none"
+              >
                 <img
                   src={`https://image.tmdb.org/t/p/w200/${actor.profile_path}`}
                   alt={actor.name}
                 />
-                <p className="now-playing title text-white">{actor.name}</p>
+                <p className="text-white text-center mt-2">{actor.name}</p>
               </Link>
             </div>
           ))}

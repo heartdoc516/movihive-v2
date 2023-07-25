@@ -1,14 +1,15 @@
 import React from "react";
+import "../style/about.css";
 
 const About = () => {
   return (
-    <div className="text-center w-50 mx-auto mt-5">
+    <div className="about-container text-center col-12 col-lg-6 mx-auto px-4">
       <h1 className="text-white">
         Bienvenue dans l'univers de{" "}
         <span className="text-warning title fs-1">MOVIHIVE</span>
       </h1>
 
-      <p className="text-white-50 mt-4">
+      <p className="text-white-50 mt-5">
         Votre destination cinématographique ultime. Notre équipe dévouée est
         composée de passionnés du cinéma qui se sont réunis pour créer une
         plateforme en ligne exceptionnelle, offrant une expérience immersive et
@@ -25,7 +26,7 @@ const About = () => {
       </p>
 
       <h2 className="mt-5 text-white">Rencontrez notre équipe :</h2>
-      <h4 className="mt-4 text-warning fs-5">
+      <h4 className="mt-5 text-warning fs-5">
         Djebali Hanen - Fondatrice et Directrice de Contenu
       </h4>
       <p className="text-white-50">
@@ -35,7 +36,7 @@ const About = () => {
         proposer une sélection de films de grande qualité, mettant en valeur des
         œuvres exceptionnelles et émergentes.
       </p>
-      <h4 className="mt-4 text-warning fs-5">
+      <h4 className="mt-5 text-warning fs-5">
         Plante Francis - Développeur Principal
       </h4>
       <p className="text-white-50">
@@ -46,7 +47,7 @@ const About = () => {
         de la technologie, offrant une navigation sans faille et des
         fonctionnalités avancées.
       </p>
-      <p className="text-white-50">
+      <p className="text-white-50 mb-5">
         Nous sommes fiers du travail acharné de notre équipe et de notre
         engagement à vous fournir une expérience cinématographique inoubliable.
         Chaque film présent sur notre site a été sélectionné avec soin, et

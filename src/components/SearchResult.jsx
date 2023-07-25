@@ -16,7 +16,10 @@ const SearchResult = ({ content, type }) => {
     return <Film size={30} color="gold" />;
   } else {
     return (
-      <Link to={linkUrl[type]} className="search-result">
+      <Link
+        to={linkUrl[type]}
+        className="search-result text-decoration-none text-center"
+      >
         <img
           src={`https://image.tmdb.org/t/p/w500/${imgPath}`}
           alt=""
@@ -24,7 +27,7 @@ const SearchResult = ({ content, type }) => {
         />
         {type === "person" && (
           <>
-            <h5 className="text-white">{content.name}</h5>
+            <h5 className="text-white mt-2">{content.name}</h5>
             <p className="text-white-50">{content.known_for_department}</p>
           </>
         )}

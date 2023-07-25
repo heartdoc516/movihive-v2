@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
 import ContentCarousel from "../components/ContentCarousel";
+import "../style/categories.css";
 
 const CategoriesPage = () => {
   const [categories, setCategories] = useState([]);

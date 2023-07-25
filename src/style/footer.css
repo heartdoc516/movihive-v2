@@ -1,0 +1,6 @@
+@import url("./main.css");
+
+.footer .coded-by {
+  color: rgba(164, 164, 164, 0.593);
+  font-size: smaller;
+}
