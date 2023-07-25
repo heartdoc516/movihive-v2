@@ -78,7 +78,7 @@ const ActorPage = () => {
 
       <div className="actor-page-container">
         <div className="movies">
-          <h2 className="overviewtext text-white">
+          <h2 className="overviewtext text-white mt-5 text-center fs-4 text-lg-start p-4">
             Les films populaires de {name}
           </h2>
           <Slider {...settings}>
@@ -99,11 +99,14 @@ const ActorPage = () => {
           </Slider>
         </div>
         <div className="biography-container">
-          <h2 className="overviewtext text-white">Biographie</h2>
-          <p className="text-white w-75 mx-auto">
+          <h2 className="overviewtext text-white mt-5 fs-4">Biographie</h2>
+          <p className="text-white w-75 mx-auto text-center text-lg-start">
             {showFullBiography ? biography : truncatedBiography}
             {!showFullBiography && (
-              <button className="see-more-button" onClick={handleSeeMoreClick}>
+              <button
+                className="see-more-button mx-auto btn btn-warning mt-4"
+                onClick={handleSeeMoreClick}
+              >
                 Voir plus
               </button>
             )}

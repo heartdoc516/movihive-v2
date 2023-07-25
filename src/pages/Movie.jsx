@@ -155,31 +155,39 @@ const MoviePage = () => {
       ,<h2 className="overviewtext title text-white">{title}</h2>
       <p className="overviewtext text-white">Date de sortie : {release_date}</p>
       <p className="overviewtext text-white">Note : {vote_average}</p>
-      <div className="synopsis-video-container">
-        <div className="overviewtext rounded bg-gray-transparent">
-          <h2 className="text-white">Bande-annonce</h2>
-        </div>
-
-        <div className="overviewtext rounded bg-gray-transparent">
-          <h2 className="text-white">Synopsis</h2>
-        </div>
-      </div>
-      <div className="synopsis-video-container">
-        <div className="overview rounded bg-gray-transparent">
-          {trailerLink && (
-            <div className="movie-info">
-              <ReactPlayer
-                url={trailerLink}
-                controls={true}
-                width="100%"
-                height="auto"
-              />
+      <div className="row">
+        <div className="col-lg-6">
+          <div className="row">
+            <div className="overviewtext rounded bg-gray-transparent">
+              <h2 className="text-white">Bande-annonce</h2>
             </div>
-          )}
+          </div>
+          <div className="row">
+            <div className="overview rounded bg-gray-transparent">
+              {trailerLink && (
+                <div className="movie-info">
+                  <ReactPlayer
+                    url={trailerLink}
+                    controls={true}
+                    width="100%"
+                    height="auto"
+                  />
+                </div>
+              )}
+            </div>
+          </div>
         </div>
-
-        <div className="overview rounded bg-gray-transparent">
-          <p className="text-white">{overview}</p>
+        <div className="col-lg-6">
+          <div className="row">
+            <div className="overviewtext rounded bg-gray-transparent">
+              <h2 className="text-white">Synopsis</h2>
+            </div>
+          </div>
+          <div className="row">
+            <div className="overview rounded bg-gray-transparent">
+              <p className="text-white">{overview}</p>
+            </div>
+          </div>
         </div>
       </div>
       <div className="cast">

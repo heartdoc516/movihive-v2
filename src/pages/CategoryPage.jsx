@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import "../style/categorypage.css";
 
 const CategoryPage = () => {
   const { idCategory } = useParams();
-  const [categoryName, setCategoryName] = useState('');
+  const [categoryName, setCategoryName] = useState("");
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -20,7 +21,7 @@ const CategoryPage = () => {
           setCategoryName(category.name);
         }
       } catch (error) {
-        console.error('Une erreur s\'est produite :', error);
+        console.error("Une erreur s'est produite :", error);
       }
     };
 
@@ -35,29 +36,37 @@ const CategoryPage = () => {
         );
         setMovies(response.data.results);
       } catch (error) {
-        console.error('Une erreur s\'est produite :', error);
+        console.error("Une erreur s'est produite :", error);
       }
     };
 
     fetchMoviesByCategory();
   }, [idCategory]);
 
-  if (categoryName === '' || movies.length === 0) {
+  if (categoryName === "" || movies.length === 0) {
     return <div>Loading...</div>;
   }
 
   return (
-    <div className="grid-container">
-      <h2 className="overviewtext now-playing title text-white">{categoryName}</h2>
+    <div className="category-page grid-container">
+      <h2 className="overviewtext now-playing title text-white">
+        {categoryName}
+      </h2>
       <div className="grid">
         {movies.map((movie) => (
           <div key={movie.id} className="grid-item">
             <Link to={`/movie/${movie.id}`}>
-              <img className="actor-image" src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`} alt={movie.title} />
+              <img
+                className="actor-image"
+                src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+                alt={movie.title}
+              />
             </Link>
-            <Link to={`/movie/${movie.id}`}>
-            <h2 className="overviewtextcatg now-playing title text-white">{movie.title}</h2>
-               </Link>
+            <Link to={`/movie/${movie.id}`} className="text-decoration-none">
+              <h2 className="overviewtextcatg now-playing title text-white">
+                {movie.title}
+              </h2>
+            </Link>
           </div>
         ))}
       </div>

@@ -154,19 +154,17 @@ const SeriePage = () => {
         </Slider>
       </div>
       ,<h2 className="overviewtext now-playing title text-white">{name}</h2>
-      <p className="overviewtext now-playing title text-white">
+      <p className="overviewtext text-white">
         Date de sortie : {first_air_date}
       </p>
-      <p className="overviewtext now-playing title text-white">
-        Note : {vote_average}
-      </p>
+      <p className="overviewtext text-white">Note : {vote_average}</p>
       <div className="synopsis-video-container">
         <div className="overviewtext rounded bg-gray-transparent">
-          <h2 className="now-playing title text-white">Bande-annonce</h2>
+          <h2 className="text-white">Bande-annonce</h2>
         </div>
 
         <div className="overviewtext rounded bg-gray-transparent">
-          <h2 className="now-playing title text-white">Synopsis</h2>
+          <h2 className="text-white">Synopsis</h2>
         </div>
       </div>
       <div className="synopsis-video-container">
@@ -184,13 +182,11 @@ const SeriePage = () => {
         </div>
 
         <div className="overview rounded bg-gray-transparent">
-          <p className="now-playing title text-white">{overview}</p>
+          <p className="text-white">{overview}</p>
         </div>
       </div>
       <div className="cast">
-        <h2 className="overviewtext now-playing title text-white">
-          Acteurs Principaux
-        </h2>
+        <h2 className="overviewtext text-white">Acteurs Principaux</h2>
         <div className="actor-container">
           {cast.map((actor) => (
             <div key={actor.id} className="actor-image">

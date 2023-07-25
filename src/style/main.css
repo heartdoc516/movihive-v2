@@ -153,7 +153,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
-  width: 600px;
+  max-width: 600px;
   height: 60px;
   margin: 20px auto;
   border-radius: 5px;
@@ -178,6 +178,7 @@ body {
   grid-template-columns: 2fr 2fr;
   gap: 5px;
 }
+
 .overview h2,
 .overview p {
   margin: 0;
