@@ -38,7 +38,10 @@ const Banner = ({ item, index, activeIndicator, genres, type }) => {
         />
 
         <div className="text-block ">
-          <Link to={`/movie/${item.id}`} className="text-decoration-none">
+          <Link
+            to={`/${type === "tv" ? "serie" : "movie"}/${item.id}`}
+            className="text-decoration-none"
+          >
             <h2 className="title text-white">
               {item.original_title || item.name}
             </h2>

@@ -104,7 +104,7 @@ const SeriePage = () => {
 
   const { name, overview, poster_path, first_air_date, vote_average } = serie;
 
-  const carouselSettings = {
+  const settings = {
     dots: true,
     infinite: true,
     speed: 500,
@@ -118,12 +118,30 @@ const SeriePage = () => {
       <div
         style={{
           width: "10px",
+          margin: "20px 0 0 0 ",
           height: "10px",
           borderRadius: "50%",
           background: i === activeSlide ? " rgba(255, 234, 0, 0.822)" : "white",
         }}
       />
     ),
+    responsive: [
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   const carouselStyle = {
@@ -140,7 +158,7 @@ const SeriePage = () => {
   return (
     <div>
       <div className="carousel" style={carouselStyle}>
-        <Slider {...carouselSettings}>
+        <Slider {...settings}>
           {backdrops.map((backdrop) => (
             <div key={backdrop.file_path}>
               <img
@@ -153,36 +171,45 @@ const SeriePage = () => {
           ))}
         </Slider>
       </div>
-      ,<h2 className="overviewtext now-playing title text-white">{name}</h2>
+      ,
+      <h2 className="overviewtext now-playing title text-white mt-4">{name}</h2>
       <p className="overviewtext text-white">
         Date de sortie : {first_air_date}
       </p>
       <p className="overviewtext text-white">Note : {vote_average}</p>
-      <div className="synopsis-video-container">
-        <div className="overviewtext rounded bg-gray-transparent">
-          <h2 className="text-white">Bande-annonce</h2>
-        </div>
-
-        <div className="overviewtext rounded bg-gray-transparent">
-          <h2 className="text-white">Synopsis</h2>
-        </div>
-      </div>
-      <div className="synopsis-video-container">
-        <div className="overview rounded bg-gray-transparent">
-          {trailerLink && (
-            <div className="movie-info">
-              <ReactPlayer
-                url={trailerLink}
-                controls={true}
-                width="100%"
-                height="auto"
-              />
+      <div className="row">
+        <div className="col-lg-6">
+          <div className="row">
+            <div className="overviewtext rounded bg-gray-transparent">
+              <h2 className="text-white">Bande-annonce</h2>
             </div>
-          )}
+          </div>
+          <div className="row">
+            <div className="overview rounded bg-gray-transparent">
+              {trailerLink && (
+                <div className="movie-info">
+                  <ReactPlayer
+                    url={trailerLink}
+                    controls={true}
+                    width="100%"
+                    height="auto"
+                  />
+                </div>
+              )}
+            </div>
+          </div>
         </div>
-
-        <div className="overview rounded bg-gray-transparent">
-          <p className="text-white">{overview}</p>
+        <div className="col-lg-6">
+          <div className="row">
+            <div className="overviewtext rounded bg-gray-transparent">
+              <h2 className="text-white">Synopsis</h2>
+            </div>
+          </div>
+          <div className="row">
+            <div className="overview rounded bg-gray-transparent">
+              <p className="text-white">{overview}</p>
+            </div>
+          </div>
         </div>
       </div>
       <div className="cast">

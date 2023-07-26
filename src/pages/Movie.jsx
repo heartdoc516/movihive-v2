@@ -103,7 +103,7 @@ const MoviePage = () => {
 
   const { title, overview, poster_path, release_date, vote_average } = movie;
 
-  const carouselSettings = {
+  const settings = {
     dots: true,
     infinite: true,
     speed: 500,
@@ -117,12 +117,30 @@ const MoviePage = () => {
       <div
         style={{
           width: "10px",
+          margin: "20px 0 0 0 ",
           height: "10px",
           borderRadius: "50%",
           background: i === activeSlide ? " rgba(255, 234, 0, 0.822)" : "white",
         }}
       />
     ),
+    responsive: [
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   const carouselStyle = {
@@ -139,7 +157,7 @@ const MoviePage = () => {
   return (
     <div className="movie-page">
       <div className="carousel" style={carouselStyle}>
-        <Slider {...carouselSettings}>
+        <Slider {...settings}>
           {backdrops.map((backdrop) => (
             <div key={backdrop.file_path}>
               <img
@@ -152,7 +170,7 @@ const MoviePage = () => {
           ))}
         </Slider>
       </div>
-      ,<h2 className="overviewtext title text-white">{title}</h2>
+      ,<h2 className="overviewtext title text-white mt-4">{title}</h2>
       <p className="overviewtext text-white">Date de sortie : {release_date}</p>
       <p className="overviewtext text-white">Note : {vote_average}</p>
       <div className="row">
