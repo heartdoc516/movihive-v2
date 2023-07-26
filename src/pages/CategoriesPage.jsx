@@ -52,32 +52,6 @@ const CategoriesPage = () => {
     return <div>Loading...</div>;
   }
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 200,
-    slidesToShow: 6,
-    slidesToScroll: 1,
-    arrows: true,
-    appendDots: (dots) => (
-      <ul style={{ margin: "0px" }}>
-        {dots.map((dot, index) => (
-          <li key={index}>{dot}</li>
-        ))}
-      </ul>
-    ),
-    customPaging: (i) => (
-      <div
-        style={{
-          width: "10px",
-          height: "10px",
-          borderRadius: "50%",
-          background: i === 0 ? " rgba(255, 234, 0, 0.822)" : "white",
-        }}
-      />
-    ),
-  };
-
   return (
     <div>
       {categories.map((category) => (

@@ -58,6 +58,7 @@ const Banner = ({ item, index, activeIndicator, genres, type }) => {
                   src={`https://image.tmdb.org/t/p/w500${provider.logo_path}`}
                   alt={provider.provider_name}
                   className="provider-logo ms-2"
+                  key={provider.provider_name}
                 ></img>
               );
             })}

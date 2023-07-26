@@ -30,14 +30,22 @@ const CategoryPage = () => {
 
   useEffect(() => {
     const fetchMoviesByCategory = async () => {
-      try {
-        const response = await axios.get(
-          `https://api.themoviedb.org/3/discover/movie?api_key=473032693308961b0a4d8a7cb78b0087&with_genres=${idCategory}`
-        );
-        setMovies(response.data.results);
-      } catch (error) {
-        console.error("Une erreur s'est produite :", error);
+      let page = 1;
+      let movieData = [];
+      while (page < 6) {
+        try {
+          console.log(page);
+          const response = await axios.get(
+            `https://api.themoviedb.org/3/discover/movie?api_key=473032693308961b0a4d8a7cb78b0087&with_genres=${idCategory}&page=${page}`
+          );
+          movieData = [...movieData, ...response.data.results];
+        } catch (error) {
+          console.error("Une erreur s'est produite :", error);
+        } finally {
+          page++;
+        }
       }
+      setMovies(movieData);
     };
 
     fetchMoviesByCategory();
@@ -48,24 +56,20 @@ const CategoryPage = () => {
   }
 
   return (
-    <div className="category-page grid-container">
-      <h2 className="overviewtext now-playing title text-white">
+    <div className="px-5 py-4">
+      <h2 className="overviewtext now-playing title text-white mt-5">
         {categoryName}
       </h2>
-      <div className="grid">
+      <div className="row">
         {movies.map((movie) => (
-          <div key={movie.id} className="grid-item">
-            <Link to={`/movie/${movie.id}`}>
+          <div key={movie.id} className="col-6 col-md-4 col-lg-2">
+            <Link to={`/movie/${movie.id}`} className="text-decoration-none">
               <img
-                className="actor-image"
-                src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+                className="actor-image w-100"
+                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                 alt={movie.title}
               />
-            </Link>
-            <Link to={`/movie/${movie.id}`} className="text-decoration-none">
-              <h2 className="overviewtextcatg now-playing title text-white">
-                {movie.title}
-              </h2>
+              <h4 className="text-white fs-6 text-start mt-3">{movie.title}</h4>
             </Link>
           </div>
         ))}

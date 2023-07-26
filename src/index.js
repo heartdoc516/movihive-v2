@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-
+import { LoadingContextProvider } from "./context/AppContext";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Amplify, Auth } from "aws-amplify";
@@ -11,7 +11,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <LoadingContextProvider>
+        <App />
+      </LoadingContextProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

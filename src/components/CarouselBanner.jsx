@@ -88,6 +88,7 @@ const CarouselBanner = ({ title, url, type }) => {
       <div className="d-flex justify-content-center gap-2 mt-3">
         {data.map((item, idx) => (
           <div
+            key={item.id}
             className={`indicator ${activeIndicator === idx && "active"}`}
             onClick={() =>
               handleSetActiveIndicator(activeIndicator, "direct", idx)

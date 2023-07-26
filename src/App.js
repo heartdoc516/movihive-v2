@@ -14,38 +14,31 @@ import Search from "./pages/Search.jsx";
 import AuthPage from "./pages/AuthPage.jsx";
 import Footer from "./components/Footer.jsx";
 
-import { LoadingContextProvider } from "./context/AppContext.jsx";
-
 function App() {
   const [user, setUser] = useState(null);
 
   return (
-    <LoadingContextProvider>
-      <div className="App">
-        <Navbar user={user} />
+    <div className="App">
+      <Navbar user={user} />
 
-        <Routes>
-          <Route path="/" element={<Movies />} />
-          <Route path="/tv" element={<Tv />} />
-          <Route path="/categories" element={<CategoriesPage />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/movie/:movieId" element={<Movie />} />
-          <Route path="/ActorPage/:actorId" element={<ActorPage />} />
-          <Route path="/serie/:serieId" element={<Serie />} />
-          <Route
-            path="/watchlist"
-            element={user ? <Watchlist /> : <Movies />}
-          />
-          <Route path="/search" element={<Search />} />
-          <Route
-            path="/auth"
-            element={<AuthPage user={user} setUser={setUser} />}
-          />
-          <Route path="/category/:idCategory" element={<CategoryPage />} />
-        </Routes>
-        <Footer />
-      </div>
-    </LoadingContextProvider>
+      <Routes>
+        <Route path="/" element={<Movies />} />
+        <Route path="/tv" element={<Tv />} />
+        <Route path="/categories" element={<CategoriesPage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/movie/:movieId" element={<Movie />} />
+        <Route path="/ActorPage/:actorId" element={<ActorPage />} />
+        <Route path="/serie/:serieId" element={<Serie />} />
+        <Route path="/watchlist" element={user ? <Watchlist /> : <Movies />} />
+        <Route path="/search" element={<Search />} />
+        <Route
+          path="/auth"
+          element={<AuthPage user={user} setUser={setUser} />}
+        />
+        <Route path="/category/:idCategory" element={<CategoryPage />} />
+      </Routes>
+      <Footer />
+    </div>
   );
 }
 

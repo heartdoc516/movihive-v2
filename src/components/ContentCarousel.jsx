@@ -12,6 +12,7 @@ import "../style/contentcarousel.css";
 
 import { Pagination, Navigation, Virtual } from "swiper/modules";
 import MovieCard from "./MovieCard.jsx";
+import Spinner from "./Spinner.jsx";
 
 const ContentCarousel = ({ title, url, type }) => {
   const [data, setData] = useState([]);
