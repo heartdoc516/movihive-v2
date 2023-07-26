@@ -68,7 +68,6 @@ const CarouselBanner = ({ title, url, type }) => {
         className="carousel-control-prev align-items-center"
         type="button"
         data-bs-target="#carouselExample"
-        data-bs-slide="prev"
         onClick={() => handleSetActiveIndicator(activeIndicator, "prev")}
       >
         <span
@@ -81,7 +80,6 @@ const CarouselBanner = ({ title, url, type }) => {
         className="carousel-control-next align-items-center"
         type="button"
         data-bs-target="#carouselExample"
-        data-bs-slide="next"
         onClick={() => handleSetActiveIndicator(activeIndicator, "next")}
       >
         <span className="carousel-control-next-icon" aria-hidden="true"></span>
