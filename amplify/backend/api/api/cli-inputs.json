@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "paths": {
+    "/watchlist": {
+      "name": "/watchlist",
+      "lambdaFunction": "watchlistLambda",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    }
+  }
+}

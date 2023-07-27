@@ -9,11 +9,21 @@
       "UnauthRoleName": "amplify-movihive-dev-114011-unauthRole",
       "StackName": "amplify-movihive-dev-114011",
       "StackId": "arn:aws:cloudformation:us-east-1:478716042450:stack/amplify-movihive-dev-114011/120c7f10-15ca-11ee-b550-0e1b661367b9",
-      "AmplifyAppId": "d3cjhrcznd51zj"
+      "AmplifyAppId": "d3cjhrcznd51zj",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-movihive-dev-114011-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "auth": {
         "movihive59bf04d1": {}
+      },
+      "function": {
+        "watchlistLambda": {
+          "deploymentBucketName": "amplify-movihive-dev-114011-deployment",
+          "s3Key": "amplify-builds/watchlistLambda-774b71765042554d2f43-build.zip"
+        }
+      },
+      "api": {
+        "api": {}
       }
     }
   }
