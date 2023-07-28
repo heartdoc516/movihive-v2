@@ -4,9 +4,11 @@ import { BrowserRouter } from "react-router-dom";
 import { LoadingContextProvider } from "./context/AppContext";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { Amplify, Auth, API } from "aws-amplify";
+
+import { Amplify, Auth, API, graphqlOperation } from "aws-amplify";
 import awsExports from "./aws-exports";
 Amplify.configure(awsExports);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>

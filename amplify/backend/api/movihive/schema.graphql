@@ -1,0 +1,6 @@
+type Favorite @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  tmdbId: String!
+}
+ 

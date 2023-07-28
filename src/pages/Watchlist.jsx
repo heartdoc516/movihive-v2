@@ -1,28 +1,34 @@
 import { useEffect, useState } from "react";
-import { API, Auth } from "aws-amplify";
+import { API, graphqlOperation } from "aws-amplify";
+import {
+  createFavorite,
+  updateFavorite,
+  deleteFavorite,
+} from "../graphql/mutations.js";
+import { listFavorites } from "../graphql/queries.js";
 
 const Watchlist = () => {
-  const [testMessage, setTestMessage] = useState();
-
-  //https://docs.amplify.aws/lib/restapi/authz/q/platform/js/
-  // figure out how to auth the api
-
-  useEffect(() => {
-    const apiName = "api";
-    const path = "/watchlist";
-    const myInit = {
-      headers: {}, // OPTIONAL
-    };
-
-    API.get(apiName, path, myInit)
-      .then((response) => {
-        console.log(response);
+  async function createFav() {
+    const result = await API.graphql(
+      graphqlOperation(createFavorite, {
+        input: {
+          name: "two",
+          tmdbId: "sdfg",
+        },
       })
+    );
+    console.log(result);
+  }
 
-      .catch((error) => {
-        console.log(error.response);
-      });
-  }, []);
+  async function getFavs() {
+    const result = await API.graphql(graphqlOperation(listFavorites));
+    console.log(result);
+  }
+
+  // createFav();
+  getFavs();
+
+  //authorization rules ??  https://docs.amplify.aws/cli/graphql/authorization-rules/
 
   return (
     <>

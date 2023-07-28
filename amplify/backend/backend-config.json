@@ -1,18 +1,25 @@
 {
   "api": {
-    "api": {
-      "dependsOn": [
-        {
-          "attributes": [
-            "Name",
-            "Arn"
+    "movihive": {
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            }
           ],
-          "category": "function",
-          "resourceName": "watchlistLambda"
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 30,
+              "description": "api key description"
+            },
+            "authenticationType": "API_KEY"
+          }
         }
-      ],
+      },
       "providerPlugin": "awscloudformation",
-      "service": "API Gateway"
+      "service": "AppSync"
     }
   },
   "auth": {
@@ -65,5 +72,6 @@
         }
       ]
     }
-  }
+  },
+  "storage": {}
 }
