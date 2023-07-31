@@ -8,10 +8,12 @@ export const onCreateFavorite = /* GraphQL */ `
   ) {
     onCreateFavorite(filter: $filter, owner: $owner) {
       id
-      name
       tmdbId
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       owner
       __typename
     }
@@ -24,10 +26,12 @@ export const onUpdateFavorite = /* GraphQL */ `
   ) {
     onUpdateFavorite(filter: $filter, owner: $owner) {
       id
-      name
       tmdbId
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       owner
       __typename
     }
@@ -40,10 +44,12 @@ export const onDeleteFavorite = /* GraphQL */ `
   ) {
     onDeleteFavorite(filter: $filter, owner: $owner) {
       id
-      name
       tmdbId
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       owner
       __typename
     }

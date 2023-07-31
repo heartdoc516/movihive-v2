@@ -70,7 +70,7 @@ const Banner = ({ item, index, activeIndicator, genres, type }) => {
             >
               Watch Trailer
             </button>
-            <Favorite />
+            <Favorite id={item.id}/>
           </div>
         </div>
       </div>

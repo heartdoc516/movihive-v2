@@ -10,7 +10,7 @@ const Tv = () => {
   let year = date.getFullYear();
 
   if (month < 10) {
-    month = "0" + month;
+    month = "0" + (month - 1);
   }
 
   if (day < 10) {

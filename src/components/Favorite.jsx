@@ -1,11 +1,67 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { createFavorite, deleteFavorite } from "../graphql/mutations";
+import { listFavorites } from "../graphql/queries";
+import { API, Auth, graphqlOperation } from "aws-amplify";
 
-const Favorite = () => {
+const Favorite = ({ id }) => {
+  const [user, setUser] = useState(null);
   const [added, setIsAdded] = useState(false);
+
+  async function isAdded() {
+    try {
+      const results = await API.graphql(graphqlOperation(listFavorites));
+
+      results.data.listFavorites.items.forEach((item) => {
+        console.log(typeof item.tmdbId);
+        if (item.tmdbId === id.toString()) {
+          setIsAdded(true);
+        }
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  async function currentAuthenticatedUser() {
+    try {
+      const user = await Auth.currentAuthenticatedUser({
+        bypassCache: false, // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
+      });
+      setUser(user);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  useEffect(() => currentAuthenticatedUser, []);
+  useEffect(() => isAdded, []);
+
+  async function addToFav() {
+    const result = await API.graphql(
+      graphqlOperation(createFavorite, {
+        input: {
+          tmdbId: id,
+        },
+      })
+    );
+    setIsAdded(true);
+    console.log(result);
+  }
+
+  async function removeFav() {
+    const result = await API.graphql(
+      graphqlOperation(deleteFavorite, {
+        input: {
+          id: "hard coded id",
+        },
+      })
+    );
+    console.log(result);
+  }
 
   return (
     <button
-      onClick={() => (added ? setIsAdded(false) : setIsAdded(true))}
+      onClick={() => (added ? removeFav() : addToFav())}
       className="bg-transparent border-0"
     >
       {added ? (

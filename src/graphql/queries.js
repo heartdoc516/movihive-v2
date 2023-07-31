@@ -5,10 +5,12 @@ export const getFavorite = /* GraphQL */ `
   query GetFavorite($id: ID!) {
     getFavorite(id: $id) {
       id
-      name
       tmdbId
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       owner
       __typename
     }
@@ -23,14 +25,47 @@ export const listFavorites = /* GraphQL */ `
     listFavorites(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        name
         tmdbId
         createdAt
         updatedAt
+        _version
+        _deleted
+        _lastChangedAt
         owner
         __typename
       }
       nextToken
+      startedAt
+      __typename
+    }
+  }
+`;
+export const syncFavorites = /* GraphQL */ `
+  query SyncFavorites(
+    $filter: ModelFavoriteFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncFavorites(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        tmdbId
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+        __typename
+      }
+      nextToken
+      startedAt
       __typename
     }
   }
