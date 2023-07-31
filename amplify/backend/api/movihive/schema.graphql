@@ -1,4 +1,4 @@
-type Favorite @model @auth(rules: [{allow: public}]) {
+type Favorite @model @auth(rules: [{ allow: owner }]) {
   id: ID!
   name: String!
   tmdbId: String!

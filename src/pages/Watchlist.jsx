@@ -8,12 +8,13 @@ import {
 import { listFavorites } from "../graphql/queries.js";
 
 const Watchlist = () => {
-  async function createFav() {
+
+  async function createFav(tmdbId, name) {
     const result = await API.graphql(
       graphqlOperation(createFavorite, {
         input: {
-          name: "two",
-          tmdbId: "sdfg",
+          name: name,
+          tmdbId: tmdbId,
         },
       })
     );
@@ -22,17 +23,17 @@ const Watchlist = () => {
 
   async function getFavs() {
     const result = await API.graphql(graphqlOperation(listFavorites));
-    console.log(result);
+    console.log(result.data);
   }
 
-  // createFav();
-  getFavs();
+  
 
-  //authorization rules ??  https://docs.amplify.aws/cli/graphql/authorization-rules/
+  useEffect(() => getFavs,[]);
 
   return (
     <>
       <div>watchlist</div>
+      <button className="btn btn-primary mt-5" onClick={() => createFav('Oppenheimer', '872585')}>create a fav</button>
     </>
   );
 };

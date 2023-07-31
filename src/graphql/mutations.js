@@ -12,6 +12,7 @@ export const createFavorite = /* GraphQL */ `
       tmdbId
       createdAt
       updatedAt
+      owner
       __typename
     }
   }
@@ -27,6 +28,7 @@ export const updateFavorite = /* GraphQL */ `
       tmdbId
       createdAt
       updatedAt
+      owner
       __typename
     }
   }
@@ -42,6 +44,7 @@ export const deleteFavorite = /* GraphQL */ `
       tmdbId
       createdAt
       updatedAt
+      owner
       __typename
     }
   }

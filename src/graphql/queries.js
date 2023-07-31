@@ -9,6 +9,7 @@ export const getFavorite = /* GraphQL */ `
       tmdbId
       createdAt
       updatedAt
+      owner
       __typename
     }
   }
@@ -26,6 +27,7 @@ export const listFavorites = /* GraphQL */ `
         tmdbId
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
