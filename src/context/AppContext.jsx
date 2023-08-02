@@ -1,13 +1,14 @@
 import { createContext, useState } from "react";
 
-export const LoadingContext = createContext();
+export const Context = createContext();
 
-export function LoadingContextProvider({ children }) {
+export function ContextProvider({ children }) {
   const [loading, setLoading] = useState(false);
+  const [user, setUser] = useState(null);
 
   return (
-    <LoadingContext.Provider value={{ loading, setLoading }}>
+    <Context.Provider value={{ loading, setLoading, user, setUser }}>
       {children}
-    </LoadingContext.Provider>
+    </Context.Provider>
   );
 }

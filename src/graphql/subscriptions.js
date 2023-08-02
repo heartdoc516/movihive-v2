@@ -11,9 +11,6 @@ export const onCreateFavorite = /* GraphQL */ `
       tmdbId
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       owner
       __typename
     }
@@ -29,9 +26,6 @@ export const onUpdateFavorite = /* GraphQL */ `
       tmdbId
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       owner
       __typename
     }
@@ -47,9 +41,6 @@ export const onDeleteFavorite = /* GraphQL */ `
       tmdbId
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
       owner
       __typename
     }

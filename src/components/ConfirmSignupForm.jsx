@@ -5,14 +5,14 @@ import { Hub } from "aws-amplify";
 import { Auth } from "aws-amplify";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { LoadingContext } from "../context/AppContext";
+import { Context } from "../context/AppContext";
 import Spinner from "./Spinner.jsx";
 
 const ConfirmSignupForm = ({ setUser, username }) => {
   const navigate = useNavigate();
   const [code, setCode] = useState("");
   const [error, setError] = useState("");
-  const { loading, setLoading } = useContext(LoadingContext);
+  const { loading, setLoading } = useContext(Context);
 
   async function confirmSignUp(e) {
     e.preventDefault();
