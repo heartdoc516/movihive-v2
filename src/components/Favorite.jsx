@@ -9,6 +9,7 @@ const Favorite = ({ id, type }) => {
   const [favs, setFavs] = useState([]);
   const [isAdded, setIsAdded] = useState(false);
   const { user, setUser } = useContext(Context);
+
   async function getFavs() {
     try {
       const result = await API.graphql(graphqlOperation(listFavorites));

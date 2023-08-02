@@ -46,7 +46,7 @@ const WatchListCard = ({ id, tmdbId, contentType }) => {
           alt=""
           className="w-100"
         />
-        <h6 className="text-white text-center mt-3">
+        <h6 className="text-white text-center mt-3 fs-5">
           {contentType === "tv" ? data.name : data.title}
         </h6>
       </Link>

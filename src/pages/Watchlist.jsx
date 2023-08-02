@@ -57,6 +57,18 @@ const Watchlist = () => {
               />
             </div>
           ))}
+          {favs.length === 0 && (
+            <div className="p-5 mt-5">
+              <h5 className="text-white-50 text-center my-5">
+                Nothing In your Watchlist Yet!
+              </h5>
+              <Link to={"/"} className="text-decoration-none">
+                <button className="btn btn-warning d-block mx-auto mt-3 mb-5">
+                  Start Browsing
+                </button>
+              </Link>
+            </div>
+          )}
         </div>
       </main>
     </div>
