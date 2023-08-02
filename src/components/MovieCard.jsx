@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "../style/moviecard.css";
 
-const MovieCard = ({ item, genres, type }) => {
+const MovieCard = ({ item, type }) => {
   return (
     <Link to={type === "movie" ? `/movie/${item.id}` : `/serie/${item.id}`}>
       <div className="w-100 movie-card position-relative">

@@ -1,4 +1,10 @@
-type Favorite @model @auth(rules: [{allow: owner}]) {
+type Favorite @model @auth(rules: [{ allow: owner }]) {
   id: ID!
   tmdbId: Int!
-} 
+  content_type: ContentType!
+}
+
+enum ContentType {
+  movie
+  tv
+}

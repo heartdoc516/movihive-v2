@@ -63,7 +63,7 @@ const ContentCarousel = ({ title, url, type }) => {
       >
         {data.map((item, index) => (
           <SwiperSlide key={item.id} virtualIndex={index}>
-            <MovieCard item={item} genres={genres} type={type} />
+            <MovieCard item={item} type={type} />
           </SwiperSlide>
         ))}
       </Swiper>

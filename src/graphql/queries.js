@@ -6,6 +6,7 @@ export const getFavorite = /* GraphQL */ `
     getFavorite(id: $id) {
       id
       tmdbId
+      content_type
       createdAt
       updatedAt
       owner
@@ -23,6 +24,7 @@ export const listFavorites = /* GraphQL */ `
       items {
         id
         tmdbId
+        content_type
         createdAt
         updatedAt
         owner
