@@ -24,6 +24,12 @@
       },
       "api": {
         "movihive": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d3cjhrcznd51zj",
+          "type": "manual"
+        }
       }
     }
   }
