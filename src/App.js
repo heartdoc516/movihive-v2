@@ -15,6 +15,7 @@ import AuthPage from "./pages/AuthPage.jsx";
 import Footer from "./components/Footer.jsx";
 import { Auth } from "aws-amplify";
 import { Context } from "./context/AppContext.jsx";
+import Alert from "./components/Alert.jsx";
 
 function App() {
   const { user, setUser } = useContext(Context);
@@ -36,7 +37,7 @@ function App() {
   return (
     <div className="App">
       <Navbar user={user} />
-
+      <Alert />
       <Routes>
         <Route path="/" element={<Movies />} />
         <Route path="/tv" element={<Tv />} />

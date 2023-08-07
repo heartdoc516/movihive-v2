@@ -8,7 +8,7 @@ import { Context } from "../context/AppContext";
 const Favorite = ({ id, type }) => {
   const [favs, setFavs] = useState([]);
   const [isAdded, setIsAdded] = useState(false);
-  const { user, setUser } = useContext(Context);
+  const { user, setUser, alert, setAlert } = useContext(Context);
 
   async function getFavs() {
     try {
@@ -42,6 +42,7 @@ const Favorite = ({ id, type }) => {
           })
         );
         setIsAdded(true);
+        setAlert(`Added to Your Watchlist`);
         console.log(result);
       } catch (e) {
         console.log(e);
@@ -63,6 +64,7 @@ const Favorite = ({ id, type }) => {
       );
 
       setIsAdded(false);
+      setAlert(`Removed from Your Watchlist`);
       console.log(result);
     }
     removeFav();

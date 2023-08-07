@@ -1,0 +1,10 @@
+@import url("./main.css");
+
+.alert {
+  position: fixed;
+  top: 60px;
+  z-index: 3;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
