@@ -19,7 +19,7 @@ const AuthForm = ({
 }) => {
   const navigate = useNavigate();
   const [error, setError] = useState("");
-  const { loading, setLoading } = useContext(Context);
+  const { loading, setLoading, setAlert } = useContext(Context);
 
   async function signUp(e) {
     e.preventDefault();
@@ -62,6 +62,7 @@ const AuthForm = ({
       console.log(user);
       setUser(user);
       navigate("/");
+      setAlert(`Signed In as ${username}`);
     } catch (error) {
       setError(error.message);
       console.log("error signing in", error);

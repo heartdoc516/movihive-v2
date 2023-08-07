@@ -12,7 +12,7 @@ const ConfirmSignupForm = ({ setUser, username }) => {
   const navigate = useNavigate();
   const [code, setCode] = useState("");
   const [error, setError] = useState("");
-  const { loading, setLoading } = useContext(Context);
+  const { loading, setLoading, setAlert } = useContext(Context);
 
   async function confirmSignUp(e) {
     e.preventDefault();
@@ -37,6 +37,7 @@ const ConfirmSignupForm = ({ setUser, username }) => {
 
         navigate("/");
         setLoading(false);
+        setAlert(`Signed in as ${username}`);
       } else if (event === "autoSignIn_failure") {
         // redirect to sign in page
         navigate("/auth");

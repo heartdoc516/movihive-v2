@@ -4,7 +4,7 @@ import { useParams, Link } from "react-router-dom";
 import Slider from "react-slick";
 import "../style/moviepage.css";
 import ReactPlayer from "react-player";
-import ActorPage from "./ActorPage";
+
 import Favorite from "../components/Favorite";
 import "../style/movie.css"; // Ajout du fichier CSS pour les styles du film
 
@@ -101,7 +101,8 @@ const MoviePage = () => {
     return <div>Loading...</div>;
   }
 
-  const { title, overview, poster_path, release_date, vote_average } = movie;
+  const { id, title, overview, poster_path, release_date, vote_average } =
+    movie;
 
   const settings = {
     dots: true,
@@ -170,7 +171,11 @@ const MoviePage = () => {
           ))}
         </Slider>
       </div>
-      ,<h2 className="overviewtext title text-white mt-4">{title}</h2>
+      <div className="d-flex align-items-center justify-content-center mt-5">
+        <h2 className="title text-white mb-0 mt-2 me-3">{title}</h2>
+        <Favorite id={id} type={"movie"} />
+      </div>
+
       <p className="overviewtext text-white">Date de sortie : {release_date}</p>
       <p className="overviewtext text-white">Note : {vote_average}</p>
       <div className="row">

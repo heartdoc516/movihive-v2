@@ -102,7 +102,8 @@ const SeriePage = () => {
     return <div>Loading...</div>;
   }
 
-  const { name, overview, poster_path, first_air_date, vote_average } = serie;
+  const { id, name, overview, poster_path, first_air_date, vote_average } =
+    serie;
 
   const settings = {
     dots: true,
@@ -172,7 +173,10 @@ const SeriePage = () => {
         </Slider>
       </div>
       ,
-      <h2 className="overviewtext now-playing title text-white mt-4">{name}</h2>
+      <div className="d-flex align-items-center justify-content-center mt-5">
+        <h2 className="title text-white mb-0 mt-2 me-3">{name}</h2>
+        <Favorite id={id} type={"tv"} />
+      </div>
       <p className="overviewtext text-white">
         Date de sortie : {first_air_date}
       </p>

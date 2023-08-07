@@ -14,7 +14,7 @@ import WatchListCard from "../components/WatchListCard.jsx";
 
 const Watchlist = () => {
   const [favs, setFavs] = useState([]);
-  const { user, setUser } = useContext(Context);
+  const { user, setUser, setAlert } = useContext(Context);
 
   async function getFavs() {
     try {
@@ -29,6 +29,7 @@ const Watchlist = () => {
     try {
       await Auth.signOut();
       setUser(null);
+      setAlert("Signed Out");
     } catch (error) {
       console.log("error signing out: ", error);
     }
