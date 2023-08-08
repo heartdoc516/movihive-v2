@@ -19,11 +19,17 @@
       "function": {
         "watchlistLambda": {
           "deploymentBucketName": "amplify-movihive-dev-114011-deployment",
-          "s3Key": "amplify-builds/watchlistLambda-774b71765042554d2f43-build.zip"
+          "s3Key": "amplify-builds/watchlistLambda-566b5864305332743834-build.zip"
         }
       },
       "api": {
         "movihive": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d3cjhrcznd51zj",
+          "type": "cicd"
+        }
       }
     }
   }
