@@ -4,13 +4,15 @@ import { Context } from "../context/AppContext";
 
 const Alert = () => {
   const { alert, setAlert } = useContext(Context);
-  const [display, setDisplay] = useState(true);
+  const [display, setDisplay] = useState(false);
 
   useEffect(() => {
-    setDisplay(true);
-    setTimeout(() => {
-      setDisplay(false);
-    }, 3000);
+    if (alert) {
+      setDisplay(true);
+      setTimeout(() => {
+        setDisplay(false);
+      }, 3000);
+    }
   }, [alert]);
 
   if (display) {
