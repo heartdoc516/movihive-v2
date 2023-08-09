@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { tmdbApiToken } from "../utils/tmdbToken";
+import { tmdbApiToken } from "../utils/tmdbToken.js";
 
 export default function useProviderFilter(data) {
   const [results, setResults] = useState([]);

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { tmdbApiToken } from "../utils/tmdbToken";
+import { tmdbApiToken } from "../utils/tmdbToken.js";
 import { API, graphqlOperation } from "aws-amplify";
 import { deleteFavorite } from "../graphql/mutations";
 
