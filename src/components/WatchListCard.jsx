@@ -33,7 +33,7 @@ const WatchListCard = ({ id, tmdbId, contentType }) => {
       .then((res) => res.json())
       .then((json) => setData(json))
       .catch((err) => console.error("error:" + err));
-  });
+  }, []);
 
   return (
     <div className="w-100 movie-card position-relative">
